@@ -21,14 +21,16 @@ namespace Regnvejrsstatistik {
                 data[i] = double.Parse(a[i]);
             }
 
-            Console.Write("Write out (Average: 0), (Min: 1), (Max: 2), (Exit: 3)");
             
             while (true) {
+                Console.Write("Write out (Average: 0), (Min: 1), (Max: 2), (Exit: 3): ");
+
                 double result = int.Parse(Console.ReadLine()) switch {
-                    0 => Statistics.Average(a),
-                    1 => Statistics.Min(a),
-                    2 => Statistics.Max(a),
-                    3 => 0x0 // TODO
+                    0 => Statistics.Average(data),
+                    1 => Statistics.Min(data),
+                    2 => Statistics.Max(data),
+                    3 => 0x0, // TODO
+                    _ => 0x0
                 };
                 Console.WriteLine(result);
             }
