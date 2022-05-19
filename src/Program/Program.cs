@@ -21,25 +21,42 @@ namespace Regnvejrsstatistik {
                 data[i] = double.Parse(a[i]);
             }
 
+            Statistics stat1 = new Statistics(data);
             
             while (true) {
                 Console.Write("Write out (Average: 0), (Min: 1), (Max: 2), (Exit: 3): ");
+                int menuOption = int.Parse(Console.ReadLine());
 
-                double result = int.Parse(Console.ReadLine()) switch {
-                    0 => Statistics.Average(data),
-                    1 => Statistics.Min(data),
-                    2 => Statistics.Max(data),
-                    3 => 0x0, // TODO
-                    _ => 0x0
-                };
-                Console.WriteLine(result);
+                if (menuOption == 3)
+                    System.Environment.Exit(1);
+
+                try {
+                    double result = menuOption switch {
+                        0 => stat1.Average(),
+                        1 => stat1.Min(),
+                        2 => stat1.Max(),
+                        _ => throw new Exception()
+                    };
+
+                    Console.WriteLine(result);
+                }
+                catch (Exception e) {
+                    Console.WriteLine("Sorry, try again.");
+                }
+
             }
         }
     }
 
     class Statistics {
-        public static double Average(double[] a) => a.Average();
-        public static double Min(double[] a) => a.Min();
-        public static double Max(double[] a) => a.Max();
+        double[] _values;
+
+        public Statistics(double[] a) {
+            this._values = a;
+        }
+
+        public double Average() => this._values.Average();
+        public double Min() => this._values.Min();
+        public double Max() => this._values.Max();
     }
 }
