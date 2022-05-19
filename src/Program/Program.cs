@@ -24,11 +24,16 @@ namespace Regnvejrsstatistik {
             Statistics stat1 = new Statistics(data);
             
             while (true) {
-                Console.Write("Write out (Average: 0), (Min: 1), (Max: 2), (Exit: 3): ");
+                Console.Write("Write out (Average: 0), (Min: 1), (Max: 2), (Values: 3), (Exit: 4): ");
                 int menuOption = int.Parse(Console.ReadLine());
 
-                if (menuOption == 3)
+                if (menuOption == 4)
                     System.Environment.Exit(1);
+
+                if (menuOption == 3) {
+                    stat1.Print();
+                    continue;
+                }
 
                 try {
                     double result = menuOption switch {
@@ -58,5 +63,12 @@ namespace Regnvejrsstatistik {
         public double Average() => this._values.Average();
         public double Min() => this._values.Min();
         public double Max() => this._values.Max();
+        public void Print() {
+            for (int i = 0; i < this._values.Length; i++)
+            {
+                Console.WriteLine("Value num: {0} \t{1} ", i+1, this._values[i]); // deleting the string formatting messes up the program somehow??
+            }
+            Console.WriteLine("");
+        }
     }
 }
