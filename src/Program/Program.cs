@@ -22,4 +22,10 @@ namespace Regnvejrsstatistik {
             }
         }
     }
+
+    class Statistics {
+        public double Average(double[] a) => a.Average();
+        public double Min(double[] a) => a.Min();
+        public double Max(double[] a) => a.Max();
+    }
 }
