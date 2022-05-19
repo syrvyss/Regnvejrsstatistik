@@ -14,6 +14,7 @@ TODO
 
 * New features are only to be added using new branch called `feature/THIS_IS_A_NEW_FEATURE`
 * `feature` brances are only to be merged into `develop`
+* `develop` is only to be merged into `master` when thorough testing has been made and all unit tests pass.
 
 ## How to run
 
