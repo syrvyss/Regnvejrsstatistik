@@ -20,12 +20,24 @@ namespace Regnvejrsstatistik {
             for (int i = 0; i < size; i++) {
                 data[i] = double.Parse(a[i]);
             }
+
+            Console.Write("Write out (Average: 0), (Min: 1), (Max: 2), (Exit: 3)");
+            
+            while (true) {
+                double result = int.Parse(Console.ReadLine()) switch {
+                    0 => Statistics.Average(a),
+                    1 => Statistics.Min(a),
+                    2 => Statistics.Max(a),
+                    3 => 0x0 // TODO
+                };
+                Console.WriteLine(result);
+            }
         }
     }
 
     class Statistics {
-        public double Average(double[] a) => a.Average();
-        public double Min(double[] a) => a.Min();
-        public double Max(double[] a) => a.Max();
+        public static double Average(double[] a) => a.Average();
+        public static double Min(double[] a) => a.Min();
+        public static double Max(double[] a) => a.Max();
     }
 }
