@@ -12,8 +12,10 @@ namespace Regnvejrsstatistik {
             Console.WriteLine(data.Length);
 
             string[] a = Console.ReadLine().Split(" ");
-            if (a.Length != size)
-                Console.WriteLine("Your data got cut off: size is {0} but you typed in {1} values!", size, a.Length);
+            if (a.Length != size) {
+                Console.WriteLine("Your data got cut off: size is {0} but you typed in {1} values! Exiting program.", size, a.Length);
+                System.Environment.Exit(1);
+            }
 
             for (int i = 0; i < size; i++) {
                 data[i] = double.Parse(a[i]);
