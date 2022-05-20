@@ -4,11 +4,7 @@ Regnvejrsstatistik is a simple open rain downpour statistical calculator.
 
 ## Design goals and choices made
 
-TODO
-
-## Other documentation
-
-TODO
+`Statistics` is deliberately a non-static class, to allow for further expansion in the future such as reinitialization of data values by the user.
 
 ## Contributing
 
@@ -27,17 +23,24 @@ dotnet run
 
 ### Unit tests
 ```sh
-# Run in ./UnitTest.Tests
 dotnet test
 ```
 
 ## How to use
 
 ```sh
-TODO
+How many data values to initialize? (usize): x
+Enter 3 Rain downpur datavalues (double+space+double):
+1.3 60.4 6.99
+
+Write out (Average: 0), (Min: 1), (Max: 2), (Median: 3), (Values: 4), (Exit: 5): 
+0
+
+22.896666666666665
 ```
 
 ## Libraries used
 
-* **System**: TODO
-* **System.Linq**: TODO
+* **System**: Required by C#
+* **System.Linq**: Easier string and array manipulation
+* **System.Collections.Generic**: Lists
