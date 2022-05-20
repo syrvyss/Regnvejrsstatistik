@@ -74,7 +74,7 @@ namespace Regnvejrsstatistik {
         }
     }
 
-    class Statistics {
+    public class Statistics {
         double[] _values;
 
         public Statistics(double[] a) {

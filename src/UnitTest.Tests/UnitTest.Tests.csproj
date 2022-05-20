@@ -18,6 +18,9 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <Reference Include="Program">
+      <HintPath>../Program/Bin/Debug/net6.0/Program.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
