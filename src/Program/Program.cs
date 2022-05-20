@@ -13,12 +13,12 @@ namespace Regnvejrsstatistik {
 
             if (!valuesParsed) {
                 Console.WriteLine("Sorry, exiting program.");
+                Console.ReadLine();
                 System.Environment.Exit(1);
             }
 
             Console.WriteLine("Enter {0} Rain downpour datavalues (double+space+double): ", size);
             double[] data = new double[size];
-            Console.WriteLine(data.Length);
 
             string[] a = Console.ReadLine().Split(" ");
             if (a.Length != size) {
@@ -95,7 +95,7 @@ namespace Regnvejrsstatistik {
         } 
         public void Print() {
             for (int i = 0; i < this._values.Count(); i++)
-                Console.WriteLine("Value num: {0} \t{1} ", i+1, this._values[i]); // deleting the string formatting messes up the program somehow??
+                Console.WriteLine("Value num: {0} \t{1} ", i+1, this._values[i]);
             Console.WriteLine("");
         }
     }
