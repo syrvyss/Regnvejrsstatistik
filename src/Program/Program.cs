@@ -6,7 +6,15 @@ namespace Regnvejrsstatistik {
     class Program {
         public static void Main() {
             Console.Write("How many data values to initialize? (usize): ");
-            int size = int.Parse(Console.ReadLine());
+            int size;
+            string input = Console.ReadLine();
+
+            bool valuesParsed = int.TryParse(input, out size);
+
+            if (!valuesParsed) {
+                Console.WriteLine("Sorry, exiting program.");
+                System.Environment.Exit(1);
+            }
 
             Console.WriteLine("Enter {0} Rain downpour datavalues (double+space+double): ", size);
             double[] data = new double[size];
@@ -24,16 +32,26 @@ namespace Regnvejrsstatistik {
             }
 
             Statistics stat1 = new Statistics(data);
-            
+
             while (true) {
+                Console.Clear();
                 Console.Write("Write out (Average: 0), (Min: 1), (Max: 2), (Median: 3), (Values: 4), (Exit: 5): ");
-                int menuOption = int.Parse(Console.ReadLine());
+                int menuOption;
+                string str = Console.ReadLine();
+
+                bool parsed = int.TryParse(str, out menuOption);
+
+                if (!parsed) {
+                    Console.WriteLine("Try again.");
+                    continue;
+                }
 
                 if (menuOption == 5)
                     System.Environment.Exit(1);
 
                 if (menuOption == 4) {
                     stat1.Print();
+                    Console.ReadLine();
                     continue;
                 }
 
@@ -51,7 +69,7 @@ namespace Regnvejrsstatistik {
                 catch (Exception e) {
                     Console.WriteLine("Sorry, try again.");
                 }
-
+                Console.ReadLine();
             }
         }
     }
