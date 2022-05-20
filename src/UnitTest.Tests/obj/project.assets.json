@@ -5978,11 +5978,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/dkNikLue/dev/cs/Regnvejrsstatistik/src/UnitTest/UnitTest.Tests/UnitTest.Tests.csproj",
+      "projectUniqueName": "/Users/dkNikLue/dev/cs/Regnvejrsstatistik/src/UnitTest.Tests/UnitTest.Tests.csproj",
       "projectName": "UnitTest.Tests",
-      "projectPath": "/Users/dkNikLue/dev/cs/Regnvejrsstatistik/src/UnitTest/UnitTest.Tests/UnitTest.Tests.csproj",
+      "projectPath": "/Users/dkNikLue/dev/cs/Regnvejrsstatistik/src/UnitTest.Tests/UnitTest.Tests.csproj",
       "packagesPath": "/Users/dkNikLue/.nuget/packages/",
-      "outputPath": "/Users/dkNikLue/dev/cs/Regnvejrsstatistik/src/UnitTest/UnitTest.Tests/obj/",
+      "outputPath": "/Users/dkNikLue/dev/cs/Regnvejrsstatistik/src/UnitTest.Tests/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/dkNikLue/.nuget/NuGet/NuGet.Config"

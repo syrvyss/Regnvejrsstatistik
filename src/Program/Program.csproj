@@ -7,4 +7,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="Program">
+      <HintPath>src/Program/bin/Debug/net6.0/Program.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
